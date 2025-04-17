@@ -1,0 +1,20 @@
+Solve problem using python script titled 'Problem_1.py'. Only include function, named 'Solution' with no text.
+Search a 
+You are given an `m x n` integer matrix `matrix` with the following two properties:
+* Each row is sorted in non-decreasing order.
+* The first integer of each row is greater than the last integer of the previous row.
+Given an integer `target`, return `true` *if* `target` *is in* `matrix` *or* `false` *otherwise*.
+You must write a solution in `O(log(m * n))` time complexity.
+**Example 1:**
+![](https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/0000-0099/0074.Search%20a%202D%20Matrix/images/mat.jpg)
+**Input:** matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
+**Output:** true
+**Example 2:**
+![](https://fastly.jsdelivr.net/gh/doocs/leetcode@main/solution/0000-0099/0074.Search%20a%202D%20Matrix/images/mat2.jpg)
+**Input:** matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13
+**Output:** false
+**Constraints:**
+* `m == matrix.length`
+* `n == matrix[i].length`
+* `1 <= m, n <= 100`
+* `-104 <= matrix[i][j], target <= 104`
