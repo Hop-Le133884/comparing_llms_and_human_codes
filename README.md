@@ -4,6 +4,9 @@ This directory structure organizes files for a project that compares code genera
 
 ## Directory Structure
 
+##### Running
+ - execution_notebooks.ipynb
+
 The repository is organized as follows:
 
 -   **easy/**, **medium/**, and **hard/**: These directories contain description files for the "Search Insert" problem, likely categorized by difficulty. The `vvv` files are currently of unknown purpose.
