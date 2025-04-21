@@ -1,0 +1,20 @@
+10_EASY_PROBLEMS  ,               ,             , 
+LLMs              , Execution_Time, passed_count, failedtest_problems
+Deepseek          , 1.2443        , 9           , ['countNegatives']
+GPT               , 1.222         , 9           , ['countNegatives']
+Gemini            , 1.2666        , 9           , ['countNegatives']
+Human             , 1.1186        , 10          , []
+                  ,               ,             , 
+10_MEDIUM_PROBLEMS,               ,             , 
+LLMs              , Execution_Time, passed_count, failedtest_problems
+Deepseek          , 0.1233        , 8           , "['hit', 'peakIndexInMountainArray']"
+GPT               , 0.1251        , 8           , "['hit', 'peakIndexInMountainArray']"
+Gemini            , 0.1265        , 8           , "['hit', 'peakIndexInMountainArray']"
+Human             , 0.1229        , 9           , ['hit']
+                  ,               ,             , 
+10_HARD_PROBLEMS  ,               ,             , 
+LLMs              , Execution_Time, passed_count, failedtest_problems
+Deepseek          , 0.0945        , 7           , "['minmaxGasDist', 'minOperations', 'query']"
+GPT               , 0.094         , 7           , "['minmaxGasDist', 'minOperations', 'query']"
+Gemini            , 0.0901        , 8           , "['minmaxGasDist', 'query']"
+Human             , 0.0846        , 10          , []
