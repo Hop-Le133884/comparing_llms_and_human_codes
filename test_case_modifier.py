@@ -39,7 +39,7 @@ def create_empty_LLM_solution(difficult_level, function_name):
         path_to_file = "easy/"
         #Deepseek
         easy_path = "Deepseek_Outputs/easy/"
-        with open(easy_path+"Deekseek_"+f"{difficult_level.lower()}_{function_name}.py", "w") as file:
+        with open(easy_path+"Deepseek_"+f"{difficult_level.lower()}_{function_name}.py", "w") as file:
             file.write("")
         #Gemini
         easy_path = "Gemini_Outputs/easy/"
@@ -53,7 +53,7 @@ def create_empty_LLM_solution(difficult_level, function_name):
         path_to_file = "medium/"
         #Deepseek
         easy_path = "Deepseek_Outputs/medium/"
-        with open(easy_path+"Deekseek_"+f"{difficult_level.lower()}_{function_name}.py", "w") as file:
+        with open(easy_path+"Deepseek_"+f"{difficult_level.lower()}_{function_name}.py", "w") as file:
             file.write("")
         #Gemini
         easy_path = "Gemini_Outputs/medium/"
@@ -67,7 +67,7 @@ def create_empty_LLM_solution(difficult_level, function_name):
         path_to_file = "hard/"
         #Deepseek
         easy_path = "Deepseek_Outputs/hard/"
-        with open(easy_path+"Deekseek_"+f"{difficult_level.lower()}_{function_name}.py", "w") as file:
+        with open(easy_path+"Deepseek_"+f"{difficult_level.lower()}_{function_name}.py", "w") as file:
             file.write("")
         #Gemini
         easy_path = "Gemini_Outputs/hard/"

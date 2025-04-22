@@ -1,0 +1,5 @@
+model        , total_ET, normalized_ET, total_MMU, normalized_MMU, total_MU, normalized_MU
+gpt-4-turbo  ,     0.89,          1.06,    128.12,           1.00,    74.94,          1.04
+DeepSeek-V3  ,     0.92,          1.09,    125.01,           1.00,    76.24,          1.08
+Gemini-2Flash,     0.90,          1.06,    125.02,           1.00,    74.09,          1.05
+Human        ,     0.93,          1.10,    128.02,           1.00,    71.34,          0.99

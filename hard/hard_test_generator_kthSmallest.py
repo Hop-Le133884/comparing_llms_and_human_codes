@@ -40,7 +40,7 @@ def test_generated_test_cases(num_tests):
         solution = Solution()
         assert solution.kthSmallest(mat, k) == expected_result
         test_case = f"assert solution.kthSmallest({mat}, {k}) == {expected_result}"
-        #print(test_case)
+        print(test_case)
         test_case_generator_results.append(test_case)
     return (mat,k), test_case_generator_results
 
