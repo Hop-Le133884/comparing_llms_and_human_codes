@@ -40,18 +40,18 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
-    def findMin(self, nums):
+    def findMin(self, nums: List[int]) -> int:
+        if nums[0] <= nums[-1]:
+            return nums[0]
         left, right = 0, len(nums) - 1
         while left < right:
-            mid = (left + right) // 2
-            if nums[mid] > nums[right]:
+            mid = (left + right) >> 1
+            if nums[0] <= nums[mid]:
                 left = mid + 1
             else:
                 right = mid
         return nums[left]
-
 
 solution=Solution()
 assert solution.findMin([2677, 2789, 2877, 3076, 3099, 3305, 3353, 3439, 3840, 3965, 4360, 4398, 4694, 4730, -4764, -4700, -4634, -4427, -4199, -4112, -3842, -3032, -2999, -2783, -2738, -2406, -1428, -1303, -656, -194, -178, 447, 635, 943, 1163, 1559, 1674, 1686, 2405]) == -4764

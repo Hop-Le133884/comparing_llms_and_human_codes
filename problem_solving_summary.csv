@@ -1,0 +1,5 @@
+Model,Easy_Passed,Easy_Failed,Easy_Rate,Easy_Failed_Problems,Medium_Passed,Medium_Failed,Medium_Rate,Medium_Failed_Problems,Hard_Passed,Hard_Failed,Hard_Rate,Hard_Failed_Problems,Total_Passed,Overall_Rate
+Deepseek,9,1,90.0%,countNegatives,8,2,80.0%,"searchMatrix, peakIndexInMountainArray",7,3,70.0%,"minmaxGasDist, minOperations, query",24,80.0%
+GPT,9,1,90.0%,countNegatives,8,2,80.0%,"searchMatrix, peakIndexInMountainArray",7,3,70.0%,"minmaxGasDist, minOperations, query",24,80.0%
+Gemini,9,1,90.0%,countNegatives,8,2,80.0%,"searchMatrix, peakIndexInMountainArray",8,2,80.0%,"minmaxGasDist, query",25,83.3%
+Human,10,0,100.0%,None,10,0,100.0%,None,10,0,100.0%,None,30,100.0%

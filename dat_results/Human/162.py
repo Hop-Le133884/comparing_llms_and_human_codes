@@ -40,18 +40,16 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
-    def findPeakElement(self, nums):
+    def findPeakElement(self, nums: List[int]) -> int:
         left, right = 0, len(nums) - 1
         while left < right:
-            mid = (left + right) // 2
+            mid = (left + right) >> 1
             if nums[mid] > nums[mid + 1]:
                 right = mid
             else:
                 left = mid + 1
         return left
-
 
 solution=Solution()
 assert solution.findPeakElement([11, 22, 35]) == 2

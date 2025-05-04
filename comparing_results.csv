@@ -1,20 +1,20 @@
 10_EASY_PROBLEMS  ,               ,             , 
-LLMs              , Execution_Time, passed_count, failedtest_problems
-Deepseek          , 1.1477        , 9           , ['countNegatives']
-GPT               , 1.1078        , 9           , ['countNegatives']
-Gemini            , 1.1405        , 9           , ['countNegatives']
-Human             , 1.0357        , 10          , []
+LLMs              , Execution_Time, passed_count, failed_problems
+Deepseek          , 1.2012        , 9           , ['countNegatives']
+GPT               , 1.1752        , 9           , ['countNegatives']
+Gemini            , 1.2051        , 9           , ['countNegatives']
+Human             , 1.0652        , 10          , []
                   ,               ,             , 
 10_MEDIUM_PROBLEMS,               ,             , 
 LLMs              , Execution_Time, passed_count, failedtest_problems
-Deepseek          , 0.113         , 7           , "['searchMatrix', 'hit', 'peakIndexInMountainArray']"
-GPT               , 0.1133        , 7           , "['searchMatrix', 'hit', 'peakIndexInMountainArray']"
-Gemini            , 0.1129        , 7           , "['searchMatrix', 'hit', 'peakIndexInMountainArray']"
-Human             , 0.1124        , 9           , ['hit']
+Deepseek          , 0.1232        , 8           , "['peakIndexInMountainArray']"
+GPT               , 0.1184        , 8           , "['peakIndexInMountainArray']"
+Gemini            , 0.1209        , 8           , "['peakIndexInMountainArray']"
+Human             , 0.1177        , 9           , []
                   ,               ,             , 
 10_HARD_PROBLEMS  ,               ,             , 
 LLMs              , Execution_Time, passed_count, failedtest_problems
-Deepseek          , 0.0959        , 7           , "['minmaxGasDist', 'minOperations', 'query']"
-GPT               , 0.0954        , 7           , "['minmaxGasDist', 'minOperations', 'query']"
-Gemini            , 0.0933        , 8           , "['minmaxGasDist', 'query']"
-Human             , 0.0854        , 10          , []
+Deepseek          , 0.095         , 7           , "['minmaxGasDist', 'minOperations', 'query']"
+GPT               , 0.0935        , 7           , "['minmaxGasDist', 'minOperations', 'query']"
+Gemini            , 0.09          , 8           , "['minmaxGasDist', 'query']"
+Human             , 0.0842        , 10          , []

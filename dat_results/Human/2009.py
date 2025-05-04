@@ -40,26 +40,16 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-# hard_minOperations.py
-
 class Solution:
-    def minOperations(self, nums):
-        nums = list(set(nums))  # Remove duplicates
-        nums.sort()  # Sort the unique elements
-
+    def minOperations(self, nums: List[int]) -> int:
         n = len(nums)
-        min_ops = n  # Initialize with the worst case (replace all elements)
-
-        for i in range(n):
-            # Find the smallest window of size n where the difference between max and min is n-1
-            end = i + n - 1
-            if end >= n:
-                break
-            min_ops = min(min_ops, nums[end] - nums[i] + 1 - n)
-
-        return min_ops
-
+        nums = sorted(set(nums))
+        ans, j = n, 0
+        for i, v in enumerate(nums):
+            while j < len(nums) and nums[j] - v <= n - 1:
+                j += 1
+            ans = min(ans, n - (j - i))
+        return ans
 
 solution=Solution()
 assert solution.minOperations([35, 62]) == 1

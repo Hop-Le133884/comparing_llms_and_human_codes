@@ -40,37 +40,25 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
-    def search(self, nums, target):
-        left, right = 0, len(nums) - 1
-
-        while left <= right:
-            mid = (left + right) // 2
-
-            if nums[mid] == target:
-                return True
-
-            # Skip duplicates from the left
-            while left < mid and nums[left] == nums[mid]:
-                left += 1
-            # Skip duplicates from the right
-            while right > mid and nums[right] == nums[mid]:
-                right -= 1
-
-            if nums[left] <= nums[mid]:
-                if nums[left] <= target < nums[mid]:
-                    right = mid - 1
+    def search(self, nums: List[int], target: int) -> bool:
+        n = len(nums)
+        l, r = 0, n - 1
+        while l < r:
+            mid = (l + r) >> 1
+            if nums[mid] > nums[r]:
+                if nums[l] <= target <= nums[mid]:
+                    r = mid
                 else:
-                    left = mid + 1
+                    l = mid + 1
+            elif nums[mid] < nums[r]:
+                if nums[mid] < target <= nums[r]:
+                    l = mid + 1
+                else:
+                    r = mid
             else:
-                if nums[mid] < target <= nums[right]:
-                    left = mid + 1
-                else:
-                    right = mid - 1
-
-        return False
-
+                r -= 1
+        return nums[l] == target
 
 solution=Solution()
 assert solution.search([-9291, -1385], 7240) == False

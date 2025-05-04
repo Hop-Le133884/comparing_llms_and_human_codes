@@ -40,48 +40,17 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-# hard_preimageSizeFZF.py
-
 class Solution:
-    def preimageSizeFZF(self, k):
-        # Function to count how many trailing zeroes are there in factorial of x
-        def count_zeroes(x):
-            count = 0
-            while x >= 5:
-                x //= 5
-                count += x
-            return count
+    def preimageSizeFZF(self, k: int) -> int:
+        def f(x):
+            if x == 0:
+                return 0
+            return x // 5 + f(x // 5)
 
-        # Binary search for the range where f(x) == k
-        left, right = 0, 5 * (k + 1)
-        
-        # Finding the first number whose factorial has at least 'k' trailing zeroes
-        while left < right:
-            mid = (left + right) // 2
-            if count_zeroes(mid) < k:
-                left = mid + 1
-            else:
-                right = mid
-        
-        # Now 'left' is the first number where f(x) >= k
-        first = left
-        if count_zeroes(first) != k:
-            return 0
-        
-        # Finding the first number whose factorial has more than 'k' trailing zeroes
-        right = 5 * (k + 1)
-        left = first
-        while left < right:
-            mid = (left + right) // 2
-            if count_zeroes(mid) > k:
-                right = mid
-            else:
-                left = mid + 1
-        
-        # The range where f(x) == k will be [first, left - 1], so the size of the range is left - first
-        return left - first
+        def g(k):
+            return bisect_left(range(5 * k), k, key=f)
 
+        return g(k + 1) - g(k)
 
 solution=Solution()
 assert solution.preimageSizeFZF(51) == 5

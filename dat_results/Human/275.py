@@ -40,21 +40,17 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
-    def hIndex(self, citations):
+    def hIndex(self, citations: List[int]) -> int:
         n = len(citations)
-        left, right = 0, n - 1
-
-        while left <= right:
-            mid = (left + right) // 2
-            if citations[mid] >= n - mid:
-                right = mid - 1
+        left, right = 0, n
+        while left < right:
+            mid = (left + right + 1) >> 1
+            if citations[n - mid] >= mid:
+                left = mid
             else:
-                left = mid + 1
-
-        return n - left
-
+                right = mid - 1
+        return left
 
 solution=Solution()
 assert solution.hIndex([14, 99, 145, 159, 183, 184, 249, 265, 281, 293, 307, 311, 341, 345, 350, 366, 403, 441, 454, 504, 520, 528, 557, 563, 624, 647, 665, 666, 679, 709, 730, 751, 755, 819, 849, 856, 886, 890, 891, 901, 906, 927, 935, 941, 999]) == 44

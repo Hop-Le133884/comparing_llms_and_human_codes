@@ -3,6 +3,9 @@ import os
 import glob
 from tqdm import tqdm
 
+
+"""use command python report_verhead > benchmark_llms.csv"""
+
 def calculate_memory_usage(dat_file_path):
     with open(dat_file_path, 'r') as file:
         prev_time = 0
@@ -117,13 +120,14 @@ for model in global_result.keys():
         total_canonical_solution_max_memory_usage += canonical_solution_max_memory_usage[idx]
         total_canonical_solution_memory_usage += canonical_solution_memory_usage[idx]
         total_canonical_solution_execution_time += canonical_solution_execution_time[idx]
-
+        
         normalized_execution_time += execution_time[idx] / canonical_solution_execution_time[idx]
         normalized_execution_time_list.append(execution_time[idx] / canonical_solution_execution_time[idx])
 
         normalized_max_memory_usage += max_memory_usage[idx] / canonical_solution_max_memory_usage[idx]
         normalized_max_memory_usage_list.append(max_memory_usage[idx] / canonical_solution_max_memory_usage[idx])
 
+        
         normalized_memory_usage += completion_memory_usage[idx] / canonical_solution_memory_usage[idx]
         normalized_memory_usage_list.append(completion_memory_usage[idx] / canonical_solution_memory_usage[idx])
 

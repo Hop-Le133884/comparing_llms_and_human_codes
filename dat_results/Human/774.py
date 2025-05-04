@@ -40,31 +40,19 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-# hard_minmaxGasDist.py
-
 class Solution:
-    def minmaxGasDist(self, stations, k):
-        def canAddStations(maxDist):
-            count = 0
-            for i in range(1, len(stations)):
-                # Calculate the number of stations to add between two adjacent stations
-                count += (stations[i] - stations[i-1] - 1) // maxDist
-                if count > k:
-                    return False
-            return True
+    def minmaxGasDist(self, stations: List[int], k: int) -> float:
+        def check(x):
+            return sum(int((b - a) / x) for a, b in pairwise(stations)) <= k
 
-        left, right = 0.0, (stations[-1] - stations[0]) / k  # Initial bounds for the maximum distance
-
-        while right - left > 1e-6:  # Precision of 10^-6
+        left, right = 0, 1e8
+        while right - left > 1e-6:
             mid = (left + right) / 2
-            if canAddStations(mid):
+            if check(mid):
                 right = mid
             else:
                 left = mid
-
         return left
-
 
 solution=Solution()
 assert solution.minmaxGasDist([2, 16, 21, 23, 28, 30, 37, 42, 44, 50, 74, 82, 83, 84, 87, 92], 73) == 1.0769227287710237

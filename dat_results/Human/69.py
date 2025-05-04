@@ -40,29 +40,17 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-# easy_mySqrt.py
-
 class Solution:
-    def mySqrt(self, x):
-        if x < 2:
-            return x
-
-        left, right = 1, x // 2
-
-        while left <= right:
-            mid = (left + right) // 2
-            square = mid * mid
-
-            if square == x:
-                return mid
-            elif square < x:
-                left = mid + 1
+    def mySqrt(self, x: int) -> int:
+        left, right = 0, x
+        while left < right:
+            mid = (left + right + 1) >> 1
+            # mid*mid <= x
+            if mid <= x // mid:
+                left = mid
             else:
                 right = mid - 1
-
-        return right
-
+        return left
 
 solution=Solution()
 assert solution.mySqrt(1183590127) == 34403

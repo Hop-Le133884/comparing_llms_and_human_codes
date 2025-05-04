@@ -40,22 +40,18 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
-    def countNegatives(self, grid):
+    def countNegatives(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
-        row, col = 0, n - 1
-        count = 0
-        
-        while row < m and col >= 0:
-            if grid[row][col] < 0:
-                count += (m - row)
-                col -= 1
+        i, j = m - 1, 0
+        ans = 0
+        while i >= 0 and j < n:
+            if grid[i][j] < 0:
+                ans += n - j
+                i -= 1
             else:
-                row += 1
-        
-        return count
-
+                j += 1
+        return ans
 
 solution=Solution()
 assert solution.countNegatives([[-41, -43, -91, -85, 59, -36, 9, -19, 68, -93, 39], [62, -82, -51, -55, 74, 92, 25, 32, 12, -88, -8], [15, -45, -2, 18, -95, 17, 60, 44, 99, -42, 32]]) == 30

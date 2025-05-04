@@ -40,18 +40,16 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
-    def peakIndexInMountainArray(self, arr):
-        left, right = 0, len(arr) - 1
+    def peakIndexInMountainArray(self, arr: List[int]) -> int:
+        left, right = 1, len(arr) - 2
         while left < right:
-            mid = (left + right) // 2
-            if arr[mid] < arr[mid + 1]:
-                left = mid + 1
-            else:
+            mid = (left + right) >> 1
+            if arr[mid] > arr[mid + 1]:
                 right = mid
+            else:
+                left = mid + 1
         return left
-
 
 solution=Solution()
 assert solution.peakIndexInMountainArray([352794, 937238, 566071, 894811, 675454, 325685, 183808, 726007, 225405, 669051, 366325, 535874, 876965, 365031, 2639, 653436, 275834, 270972, 247070, 758978, 664964, 924682, 102082, 677342, 90035, 635088, 300785, 155498, 384446, 842044, 817664, 1737, 937022, 251692, 498940, 151671, 764208, 453814, 774443, 688855, 523046, 51386, 550160, 787886, 170310, 521843, 753755, 832624, 787116, 254569, 759717, 702340, 955690, 7295, 480953, 575787, 328717, 642187]) == 55

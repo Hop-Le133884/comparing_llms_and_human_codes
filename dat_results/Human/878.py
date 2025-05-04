@@ -40,31 +40,12 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-# hard_nthMagicalNumber.py
-
 class Solution:
-    def nthMagicalNumber(self, n, a, b):
-        MOD = 10**9 + 7
-
-        # Helper function to calculate Least Common Multiple (LCM) of a and b
-        def lcm(x, y):
-            from math import gcd
-            return x * y // gcd(x, y)
-
-        # Binary search to find the nth magical number
-        left, right = min(a, b), n * min(a, b)
-        lcm_ab = lcm(a, b)
-
-        while left < right:
-            mid = (left + right) // 2
-            if mid // a + mid // b - mid // lcm_ab >= n:
-                right = mid
-            else:
-                left = mid + 1
-
-        return left % MOD
-
+    def nthMagicalNumber(self, n: int, a: int, b: int) -> int:
+        mod = 10**9 + 7
+        c = lcm(a, b)
+        r = (a + b) * n
+        return bisect_left(range(r), x=n, key=lambda x: x // a + x // b - x // c) % mod
 
 solution=Solution()
 assert solution.nthMagicalNumber(29, 235, 850) == 5405

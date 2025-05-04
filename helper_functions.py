@@ -50,11 +50,11 @@ def basename_get(path_file, kind = True):
         return os.path.splitext(os.path.basename(tempt_base))[0]
     
 
-def avg(numbers):
+def avg(numbers, percentage=1):
     """
     Calculate the average of a list of numbers using built-in sum and len.
     Returns 0 for empty lists.
     """
     if not numbers:
         return 0
-    return round(sum(numbers) / len(numbers), 4)
+    return round((sum(numbers) / len(numbers))*percentage, 4)

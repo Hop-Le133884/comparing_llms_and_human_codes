@@ -40,23 +40,16 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
-    def findNthDigit(self, n):
-        length = 1
-        count = 9
-        start = 1
-        
-        while n > length * count:
-            n -= length * count
-            length += 1
-            count *= 10
-            start *= 10
-        
-        start += (n - 1) // length
-        s = str(start)
-        return int(s[(n - 1) % length])
-
+    def findNthDigit(self, n: int) -> int:
+        k, cnt = 1, 9
+        while k * cnt < n:
+            n -= k * cnt
+            k += 1
+            cnt *= 10
+        num = 10 ** (k - 1) + (n - 1) // k
+        idx = (n - 1) % k
+        return int(str(num)[idx])
 
 solution=Solution()
 assert solution.findNthDigit(46) == 2

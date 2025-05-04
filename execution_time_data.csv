@@ -1,0 +1,5 @@
+Model,Easy_Execution_Time,Medium_Execution_Time,Hard_Execution_Time
+Deepseek,1.1477,0.113,0.0959
+GPT,1.1078,0.1133,0.0954
+Gemini,1.1405,0.1129,0.0933
+Human,1.0357,0.1124,0.0854

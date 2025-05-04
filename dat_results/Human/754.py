@@ -40,19 +40,15 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class Solution:
     def reachNumber(self, target: int) -> int:
         target = abs(target)
-        step = 0
-        total = 0
-
-        while total < target or (total - target) % 2 != 0:
-            step += 1
-            total += step
-
-        return step
-
+        s = k = 0
+        while 1:
+            if s >= target and (s - target) % 2 == 0:
+                return k
+            k += 1
+            s += k
 
 solution=Solution()
 assert solution.reachNumber(319697706) == 25287

@@ -40,26 +40,16 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-# easy_isPerfectSquare.py
-
 class Solution:
-    def isPerfectSquare(self, num):
+    def isPerfectSquare(self, num: int) -> bool:
         left, right = 1, num
-
-        while left <= right:
-            mid = (left + right) // 2
-            square = mid * mid
-
-            if square == num:
-                return True
-            elif square < num:
-                left = mid + 1
+        while left < right:
+            mid = (left + right) >> 1
+            if mid * mid >= num:
+                right = mid
             else:
-                right = mid - 1
-
-        return False
-
+                left = mid + 1
+        return left * left == num
 
 solution=Solution()
 assert solution.isPerfectSquare(198794985) == False

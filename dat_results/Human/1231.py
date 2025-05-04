@@ -40,31 +40,25 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-# hard_maximizeSweetness.py
-
 class Solution:
-    def maximizeSweetness(self, sweetness, k):
-        def canDivide(minSweetness):
-            count, currentSweetness = 0, 0
-            for s in sweetness:
-                currentSweetness += s
-                if currentSweetness >= minSweetness:
-                    count += 1
-                    currentSweetness = 0
-            return count >= k + 1
+    def maximizeSweetness(self, sweetness: List[int], k: int) -> int:
+        def check(x: int) -> bool:
+            s = cnt = 0
+            for v in sweetness:
+                s += v
+                if s >= x:
+                    s = 0
+                    cnt += 1
+            return cnt > k
 
-        left, right = min(sweetness), sum(sweetness)
-        
-        while left < right:
-            mid = (left + right + 1) // 2  # We are looking for the maximum possible sweetness
-            if canDivide(mid):
-                left = mid  # If we can divide, try for a larger sweetness
+        l, r = 0, sum(sweetness)
+        while l < r:
+            mid = (l + r + 1) >> 1
+            if check(mid):
+                l = mid
             else:
-                right = mid - 1  # Otherwise, reduce the sweetness
-        
-        return left
-
+                r = mid - 1
+        return l
 
 solution=Solution()
 assert solution.maximizeSweetness([41, 97, 80], 0) == 218

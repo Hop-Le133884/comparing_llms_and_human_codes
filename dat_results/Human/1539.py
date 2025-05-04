@@ -40,24 +40,18 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-# easy_findKthPositive.py
-
 class Solution:
-    def findKthPositive(self, arr, k):
-        left, right = 0, len(arr) - 1
-
-        while left <= right:
-            mid = (left + right) // 2
-            missing = arr[mid] - (mid + 1)
-
-            if missing < k:
-                left = mid + 1
+    def findKthPositive(self, arr: List[int], k: int) -> int:
+        if arr[0] > k:
+            return k
+        left, right = 0, len(arr)
+        while left < right:
+            mid = (left + right) >> 1
+            if arr[mid] - mid - 1 >= k:
+                right = mid
             else:
-                right = mid - 1
-
-        return left + k
-
+                left = mid + 1
+        return arr[left - 1] + k - (arr[left - 1] - (left - 1) - 1)
 
 solution=Solution()
 assert solution.findKthPositive([80, 114, 249, 442, 555, 644, 665, 747, 869], 494) == 498
